@@ -31,9 +31,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        if (getArguments() != null){
-            String s = getArguments().getString(Constants.USER_TASK);
-        }
+
         binding.addFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,14 +39,14 @@ public class HomeFragment extends Fragment {
             }
 
         });
+        if (getArguments() != null){
+            String s = getArguments().getString(Constants.USER_TASK);
+            binding.txtTitle.setText(s);
+        }
 
     }
-    private void getText(String  userTask,int ololo){
+    private void getText(String  userTask,int abobus){
 
     }
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
+
 }

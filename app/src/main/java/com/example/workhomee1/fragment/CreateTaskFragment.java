@@ -10,6 +10,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.workhomee1.R;
 import com.example.workhomee1.databinding.FragmentCreateTaskBinding;
@@ -40,6 +41,7 @@ public class CreateTaskFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString(Constants.USER_TASK, userTask);
                 Navigation.findNavController(requireView()).navigate(R.id.homeFragment,bundle);
+                Toast.makeText(getContext(), "" +  bundle.getString(Constants.USER_TASK, userTask), Toast.LENGTH_SHORT).show();
             }
         });
 
